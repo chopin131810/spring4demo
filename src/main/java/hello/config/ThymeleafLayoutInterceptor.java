@@ -11,7 +11,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  * (ex: templates/layout/master.html). The original view is placed in the model as a view variable, so it can be used 
  * in the layout file. Should override postHandle method to ensure it is executed before rendering the view.<br/>
  * Should add this interceptor in MvcConfig class
- * @author Welcome
+ * @author banhbaochay
  *
  */
 public class ThymeleafLayoutInterceptor extends HandlerInterceptorAdapter {
@@ -24,8 +24,19 @@ public class ThymeleafLayoutInterceptor extends HandlerInterceptorAdapter {
 			return;
 		}
 		String originalView = modelAndView.getViewName();
+		// Fix a minor bug of master layout with redirect/forward
+		if (isRedirectOrForward(originalView)) return;
+		
 		modelAndView.setViewName(DEFAULT_LAYOUT);
 		modelAndView.addObject(DEFAULT_VIEW_ATTRIBUTE_NAME, originalView);
 	}
 	
+	/**
+	 * Check redirect/forward
+	 * @param viewName
+	 * @return
+	 */
+	private boolean isRedirectOrForward(String viewName) {
+		return viewName.startsWith("redirect:") || viewName.startsWith("forward:");
+	}
 }

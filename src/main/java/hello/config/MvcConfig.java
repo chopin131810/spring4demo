@@ -7,6 +7,11 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * This class defines configurations for WebMVC
+ * @author banhbaochay
+ *
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"hello"})
