@@ -35,7 +35,7 @@ public class FileUploadController {
         return "uploadForm";
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/")
+    @RequestMapping(method = RequestMethod.POST, value = "/a")
     public String handleFileUpload(@RequestParam("name") String name,
             @RequestParam("file") MultipartFile file,
             RedirectAttributes redirectAttributes) {
