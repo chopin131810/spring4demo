@@ -30,3 +30,7 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+.form-group.required .control-label:after {
+  content:"(*)";
+  color:red;
+}
