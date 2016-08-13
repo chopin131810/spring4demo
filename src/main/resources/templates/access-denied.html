@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout/master :: script">
+    <title>Spring4 Learning</title>
+</head>
+<body>
+	<div class="container" th:fragment="content">
+	   <p>User [[${#httpServletRequest.remoteUser}]] doesn't have permission to access this page</p>
+	</div>
+</body>
+</html>

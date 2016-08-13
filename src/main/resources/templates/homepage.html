@@ -3,8 +3,12 @@
     <title>Spring4 Learning</title>
 </head>
 <body>
-	<div class="container" th:fragment="content">
-	   <p><h4>This is the homepage of Spring 4 Learning, copyright by Ivev company</h4></p>
-	</div>
+  <div class="container" th:fragment="content">
+    <p><h4>This is the homepage of Spring 4 Learning, copyright by Ivev company</h4></p>
+    
+    <div th:if="${#authorization.expression('isAuthenticated()')}">
+      <span th:text="${'Hello ' + #authentication.name}">Hello</span>
+    </div>
+  </div>
 </body>
 </html>
