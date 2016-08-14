@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout/master :: script">
+    <title>Spring4 Learning</title>
+</head>
+<body>
+	<div th:fragment="content">
+      <div class="panel panel-info">
+        <button data-toggle="collapse" data-target="#description"
+            class="btn btn-primary">Toggle description</button>
+        <div id="description" class="collapse">
+    	    <p>This is the demo page of Angular JS integration with Spring 4. Enter your name into input box,
+          your name will be displayed on greeting message. This is basic feature of AngularJS (simple AJAX)
+          </p>
+        </div>
+      </div>
+      <div ng-app="" class="panel panel-info">
+        <div class="panel-body">
+          <h4 ng-show="yourName.length">Welcome "{{yourName}}" to our Ivev project</h4>
+          <h4 ng-hide="yourName.length">Welcome to our Ivev project</h4>
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="name">Your name:</label>
+              <input type="text" ng-model="yourName" class="form-control"
+                  placeholder="Enter your name" />
+            </div>
+          </div>
+        </div>
+      </div>
+	</div>
+</body>
+</html>

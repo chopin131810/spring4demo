@@ -3,8 +3,11 @@
     <title>Spring4 Learning</title>
 </head>
 <body>
-	<div class="container" th:fragment="content">
-	   <p><h4>This is the homepage of Spring 4 Learning, copyright by Ivev company</h4></p>
+	<div th:fragment="content">
+      <p>Ivev features are listed below:</p>
+      <div class="list-group">
+        <a href="#" class="list-group-item" th:href="@{/angularJS}">AngularJS</a>
+      </div>
 	</div>
 </body>
 </html>
